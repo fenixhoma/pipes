@@ -1,0 +1,24 @@
+<div class="container-fluid">
+
+    <div class="row mb-2 col">
+    <h3>Custom Pipes:</h3>
+    <hr>
+        <div class="card" style="width:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Custom uppercase</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | CustomUpper : arg [boolean] </h6>
+                <p class="card-text">original: {{ value }} Arg: {{ extra }}</p>
+                <p class="card-text">no arg/ false: {{ value | CustomUpper: extra }}</p>
+            </div>
+            <div class="card-footer text-muted">
+                use the button to update the pipe value
+                <button type="submit" class="btn btn-outline-primary justify-content-md-end" (click)="changeValue()"> Change! </button>
+            </div>
+
+        </div>
+    
+       
+    </div>
+    
+        
+    </div>

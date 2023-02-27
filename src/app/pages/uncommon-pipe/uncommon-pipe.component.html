@@ -1,0 +1,159 @@
+<div class="container-fluid">
+  <div class="row mb-2 col">
+    <div>
+        <h4>I18nSelect Pipe:</h4>
+        <h5 class="text-muted">Generic selector that displays the string that matches the current value.</h5>
+    </div>
+    Mapa de objectos:
+    <pre>{{ mapGenero | json }}</pre>
+    <hr />
+    <div class="card" style="width: 22rem">
+      <div class="card-body">
+        <h5 class="card-title">value | i18nSelect: mapGenero</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{ clientes[1] }} - "male"
+        </h6>
+        <p class="card-text">
+          saludos {{ clientes[1] }}, es un placer,
+          {{ 'male' | i18nSelect : mapGenero }}
+          a nuestro evento.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 22rem">
+      <div class="card-body">
+        <h5 class="card-title">value | i18nSelect: mapGenero</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{ clientes[0] }} - "female"
+        </h6>
+        <p class="card-text">
+          saludos {{ clientes[0] }}, es un placer,
+          {{ 'female' | i18nSelect : mapGenero }}
+          a nuestro evento.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="width: 22rem">
+      <div class="card-body">
+        <h5 class="card-title">value | i18nSelect: mapGenero</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{ clientes[6] }} - "other"
+        </h6>
+        <p class="card-text">
+          saludos {{ clientes[6] }}, es un placer,
+          {{ 'other' | i18nSelect : mapGenero }}
+          a nuestro evento.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2 col">
+    <hr>
+    <div>
+        <h4>I18nPlural Pipe:</h4>
+        <h5 class="text-muted">Maps a value to a string that pluralizes the value according to locale rules.</h5>
+    </div>
+    
+    <strong class="text'center">[ {{ clientes }} ]</strong>
+        <div class="card" style="width:30rem;">
+            <div class="card-body">
+                <h5 class="card-title">i18nPlurar Pipe</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | i18nSelect: mapGenero </h6>
+                <p class="card-text">
+                    Actualmente {{ clientes.length | i18nPlural:clienteMapa }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row mb-2 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Slice Pipe</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">array | | slice : start [ : end ]</h5>
+                    <h6 class="card-subtitle mb-2 text-muted ">Creates a new Array or String containing a subset (slice) of the elements.</h6>
+                    <div class="card-text">
+                        <strong>Original</strong>
+                        <pre>{{ clientes }}</pre>
+                        <hr>
+                        <strong>0-2</strong>
+                        <pre>{{ clientes | slice:0:2 }}</pre>
+                        <hr>
+                        <strong>1-2</strong>
+                        <pre>{{ clientes | slice:1:2 }}</pre>
+                        <hr>
+                        <strong>1-3</strong>
+                        <pre>{{ clientes | slice:1:3 }}</pre>
+                        <hr>
+                        <strong>3-3</strong>
+                        <pre>{{ clientes | slice:3:3 }}</pre>
+                        <hr>
+                        <strong>0-4</strong>
+                        <pre>{{ clientes | slice:0:4 }}</pre>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="row mb-2 col-6">
+                <div class="card" style="width:35rem;">
+                    <div class="card-header">
+                        <h4>Json Pipe</h4>
+                      </div>
+                    <div class="card-body">
+                        <h5 class="card-title"> value | json</h5>
+                        <h6 class="card-subtitle mb-2 text-muted ">Converts a value into its JSON-format representation. Useful for debugging.</h6>
+                        <div class="card-text">
+                           {{ persona | json }}
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row mb-2 col-6 ">
+                <div class="card" style="width:35rem;">
+                    <div class="card-header">
+                        <h4>ValueKey Pipe</h4>
+                      </div>
+                    <div class="card-body">
+                        <h6 class="card-title"> *ngFor="let item of persona | keyvalue" </h6>
+                        <h6 class="card-subtitle mb-2 text-muted ">Transforms Object or Map into an array of key value pairs.</h6>
+                        <div class="card-text">
+                           <ul>
+                                <li *ngFor="let item of persona | keyvalue">
+                                    {{item.key}}=>{{item.value}}
+                                </li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row mb-2 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Async Pipe</h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"> obj< observable | promise > | async </h5>
+                <h6 class="card-subtitle mb-2 text-muted ">Unwraps a value from an asynchronous primitive.</h6>
+                <div class="card-text">
+                    <strong>Using Observable </strong>
+                    {{ miObservable | async }}
+                    <hr>
+                    <strong>Using Promise</strong>
+                    <em *ngIf="!( valuePromise | async)">Loading...</em>
+                    {{ valuePromise | async }}
+                </div>
+            </div>
+        </div>
+</div>
+    
+</div>

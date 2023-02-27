@@ -1,0 +1,135 @@
+<div class="container-fluid">
+
+<div class="row mb-2 col">
+<h3>Basic Pipes:</h3>
+<hr>
+    <div class="card" style="width:18rem;">
+        <div class="card-body">
+            <h5 class="card-title">uppercase</h5>
+            <h6 class="card-subtitle mb-2 text-muted "> value | uppercase </h6>
+            <p class="card-text">original: {{ nombre }}</p>
+            <p class="card-text">after pipe: {{ nombre  | uppercase }}</p>
+        </div>variable
+    </div>
+
+    <div class="card" style="width:18rem;">
+        <div class="card-body">
+            <h5 class="card-title">lowercase</h5>
+            <h6 class="card-subtitle mb-2 text-muted "> value | lowercase </h6>
+            <p class="card-text">original: {{ nombre }}</p>
+            <p class="card-text">after pipe: {{ nombre | lowercase }}</p>
+        </div>
+    </div>
+    <div class="card" style="width:18rem;">
+        <div class="card-body">
+            <h5 class="card-title">titlecase</h5>
+            <h6 class="card-subtitle mb-2 text-muted "> value | titlecase </h6>
+            <p class="card-text">original: {{ nombre }}</p>
+            <p class="card-text">after pipe: {{ nombre | titlecase }}</p>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-2 col">
+    <h3>Date | Pipe:</h3>
+    <hr>
+    <strong class="text-center">Date: {{ fecha }}</strong>
+    <hr>
+    <div class="accordion accordion-flush" id="accordionFlushExample" >
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-one">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-col-one" aria-expanded="true" aria-controls="flush-one">
+            fecha | date
+          </button>
+        </h2>
+        <div id="flush-col-one" class="accordion-collapse collapse" aria-labelledby="flush-one" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            {{ fecha | date }}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-two">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-col-two" aria-expanded="true" aria-controls="flush-two">
+            fecha | date: 'short'
+          </button>
+        </h2>
+        <div id="flush-col-two" class="accordion-collapse collapse" aria-labelledby="flush-two" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            {{ fecha | date: 'short' }}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-three">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-col-three" aria-expanded="true" aria-controls="flush-three">
+            fecha | date: 'long'
+          </button>
+        </h2>
+        <div id="flush-col-three" class="accordion-collapse collapse" aria-labelledby="flush-three" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            {{ fecha | date: 'long' }}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-four">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-col-four" aria-expanded="true" aria-controls="flush-four">
+            fecha | date: 'MMMM'
+          </button>
+        </h2>
+        <div id="flush-col-four" class="accordion-collapse collapse" aria-labelledby="flush-four" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            {{ fecha | date: 'MMMM' }}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-five">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-col-five" aria-expanded="true" aria-controls="flush-five">
+            fecha | date: 'MMMM dd, yyyy'
+          </button>
+        </h2>
+        <div id="flush-col-five" class="accordion-collapse collapse" aria-labelledby="flush-five" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            {{ fecha | date: 'MMMM dd, yyyy' }}
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-six">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-col-six" aria-expanded="true" aria-controls="flush-six">
+            fecha | date: 'long' : 'GMT-4'
+          </button>
+        </h2>
+        <div id="flush-col-six" class="accordion-collapse collapse" aria-labelledby="flush-six" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            {{ fecha | date: 'long' : 'GMT-4' }}
+          </div>
+        </div>
+      </div>
+      
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-seven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-col-seven" aria-expanded="true" aria-controls="flush-seven">
+            fecha | date: 'long' : 'GMT-4' : 'FR'
+          </button>
+        </h2>
+        <div id="flush-col-seven" class="accordion-collapse collapse" aria-labelledby="flush-seven" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            {{ fecha | date: 'long' : 'GMT-4' : 'fr' }}
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+</div>
+    
+</div>

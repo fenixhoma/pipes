@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+    <div class="row mb-2 col">
+    <h3>Numeric & Decimal Pipes:</h3>
+    <hr>
+    <strong class="text-center">{{ numero }}</strong>
+    <hr>
+        <div class="card" style="width:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Number</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | number </h6>
+                <p class="card-text">after pipe: {{ numero | number }}</p>
+            </div>
+        </div>
+    
+        <div class="card" style="width:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Numeric digits</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | number: '1.2-2' </h6>
+                <p class="card-text">after pipe: {{ numero | number: '1.2-2' }}</p>
+            </div>
+        </div>
+        <div class="card" style="width:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Currency</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | currency </h6>
+                <p class="card-text">after pipe: {{ numero | currency }}</p>
+            </div>
+        </div>
+        <div class="card" style="width:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Currency</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | currency: locale </h6>
+                <p class="card-text">after pipe: {{ numero | currency:'USD':'symbol-narrow'}}</p>
+            </div>
+        </div>
+        <hr>
+        <h3>Percent Pipe</h3>
+            <strong class="text-center">{{ porcentaje }}</strong>
+        <hr>
+        <div class="card" style="width:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Percent</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | percent </h6>
+                <p class="card-text">after pipe: {{ porcentaje | percent }}</p>
+            </div>
+        </div>
+        <div class="card" style="width:18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Percent</h5>
+                <h6 class="card-subtitle mb-2 text-muted "> value | percent: '2.2-2' </h6>
+                <p class="card-text">after pipe: {{ porcentaje | percent:'2.2-2' }}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
